@@ -151,7 +151,7 @@ plot(wine$Phenols, wine$Flavanoids,
 model_wine_line <- lm(wine$Flavanoids ~ wine$Phenols, data = wine)# Fit a linear model
 abline(model_wine_line, col = "red", lwd = 2)# Add the fitted line to the scatter plot
 
-#Multi Regression
+#Multiple Regression
 model_wine <- lm(Alcohol ~ Proline + Malic, data = wine)# Fitting a linear model predicting Alcohol using Proline and Malic_Acid
 summary(model_wine)
 
@@ -361,7 +361,7 @@ plot(diamonds$carat, diamonds$price,
 model_diamonds_line <- lm(price ~ carat, data = diamonds)# Fitting a linear model predicting price from carat
 abline(model_diamonds_line, col = "red", lwd = 2)  # Adding the fitted line to the scatter plot
 
-# Multi regression model
+# Multiple regression
 model_diamonds <- lm(price ~ carat + depth, data = diamonds)
 summary(model_diamonds)
 
