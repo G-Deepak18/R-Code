@@ -92,10 +92,8 @@ library(ggplot2)
 ggplot(variance_df, aes(x = Component)) +
   geom_line(aes(y = CumulativeVariance), color = "black", size = 1) +
   geom_point(aes(y = CumulativeVariance), color = "black", size = 2) +
-  # Add axis lines
   geom_hline(yintercept = 0, color = "black", linetype = "solid") +
   geom_vline(xintercept = 0, color = "black", linetype = "solid") +
-  # Customize labels and themes
   labs(
     title = "Cumulative Variance Explained by Principal Components",
     x = "Principal Components",
@@ -236,7 +234,7 @@ barplot(table(Pima.te$type), main = "Distribution of Diabetes", xlab = "Diabetes
 #Correlation Matrix
 cor_matrix_pima <- cor(Pima.te[, 1:7])  # Exclude the target variable (type)
 
-# Display correlation matrix
+#Correlation plot
 corrplot(cor_matrix_pima, 
          method = "circle", # Circle method for visualization
          type = "upper", 
