@@ -56,7 +56,7 @@ plot(birthwt$bwt, birthwt$ptl,
 model_bwt_ptl_line <- lm(ptl ~ bwt, data = birthwt) # Fitting a linear model predicting ptl from bwt
 abline(model_bwt_ptl_line, col = "red", lwd = 2)  # Add the fitted line to the scatter plot
 
-#Multi regression
+#Multiple regression
   model_birthwt <- glm(bwt ~ lwt + ptl, data = birthwt)
 summary(model_birthwt)
 
