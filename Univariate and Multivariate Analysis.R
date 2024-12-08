@@ -6,7 +6,7 @@ library(psych)
 help(birthwt) #Description about dataset
 str(birthwt) #structure birthwt
 
-#summary statistics - birth weight
+#summary statistics - Numerical Variable - birthwt
 summary(birthwt$bwt)
 sd(birthwt$bwt) #Standard Deviation
 skew(birthwt$bwt) #Skewness
@@ -65,12 +65,12 @@ plot(model_birthwt, which = 1)#Residuals vs Fitted plot
 
 plot(model_birthwt, which = 2)#QQ plot of residuals
 
-#PCA
+#Principal Component Analysis
 pca_birthwt <- prcomp(birthwt[, c("age", "lwt", "ptl","ftv","bwt")], scale. = TRUE)
 pca_summary_birthwt<- summary(pca_birthwt)
 print(pca_summary_birthwt)
 
-# Plot the explained variance (scree plot)
+#Scree plot
 screeplot(pca_birthwt,type= "lines" ,main = "Scree Plot of Principal Components")
 
 #Biplot
@@ -161,7 +161,7 @@ plot(model_wine,which=1)# Residuals vs fitted plot
 
 plot(model_wine,which=2)#QQ plot of residuals
 
-#PCA
+#Principal Component Analysis
 wine_pca <- prcomp(wine[, -1], center = TRUE, scale. = TRUE)  # Exclude Type
 pca_summary_wine <- summary(wine_pca)
 print(pca_summary_wine)
@@ -267,18 +267,16 @@ plot(model_pima,which=1)# residuals vs fitted plots
 
 plot(model_pima,which=2)#QQ plot of residuals
 
-#PCA
+#Principal Component Analysis
 
 pca_data_Pima <- Pima.te[, c("npreg", "glu", "bp", "skin","bmi", "ped", "age")]# Select numeric columns for PCA
-
-# Perform PCA
 pca_Pima <- prcomp(pca_data_Pima, scale. = TRUE)
 pca_summary_pima <- summary(pca_Pima)
 
-# Plot explained variance
+#Screeplot
 screeplot(pca_Pima,type = "lines", main="Scree Plot of PCA")
 
-# Biplot of PCA
+#Biplot
 biplot(pca_Pima, main="PCA Biplot", col = c("lightblue", "blue"))
 
 #Plot cumulative variance vs principal component
@@ -413,6 +411,8 @@ ggplot(variance_df, aes(x = Component)) +
   theme_minimal() +
   scale_y_continuous(labels = scales::percent) +
   scale_x_continuous(breaks = seq_along(variance_df$Component))
+
+
 
 
 
