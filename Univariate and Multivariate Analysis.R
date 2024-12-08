@@ -105,7 +105,7 @@ ggplot(variance_df, aes(x = Component)) +
   scale_y_continuous(labels = scales::percent)
 #----------------------------------------------------------------------------------
 
-#Dataset-2
+#Dataset 2 - wine
 library(rattle)
 #Data overview
 help(wine)
@@ -121,7 +121,7 @@ kurtosi(wine$Alcohol) #Kurtosis
 hist(wine$Alcohol, main = "Histogram of Alcohol", xlab = "Alcohol", col = "skyblue", breaks = 15)
 
 #Boxplot
-boxplot(wine$Alcohol, main = "Boxplot of Alcohol", ylab = "Alcohol", col = "skyblue", horizontal = TRUE)
+boxplot(wine$Alcohol, main = "Boxplot of Alcohol", ylab = "Alcohol", col = "skyblue")
 
 #Categorical Variable analysis
 barplot(table(wine$Type), 
@@ -309,7 +309,7 @@ ggplot(variance_df, aes(x = Component)) +
 
 #-------------------------------------------------------------------------------
 
-# Dataset -4 - Diamonds
+# Dataset 4 - diamonds
 
 library(ggplot2)
 #Data Overview
@@ -413,8 +413,6 @@ ggplot(variance_df, aes(x = Component)) +
   theme_minimal() +
   scale_y_continuous(labels = scales::percent) +
   scale_x_continuous(breaks = seq_along(variance_df$Component))
-
-
 
 
 
